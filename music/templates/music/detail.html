@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'music\base.html'%}
+
+    
+
+{% block body %}    
+    
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body style="background: rgb(247, 111, 195)">
+        {% if album %}
+        
+            <img src="{{album.album_logo}}">
+            <h2>Album title is : <a href ="/music/{{album.id}}">{{album.album_title}}</a></h2>
+                    
+            <h2>Album artist name is : {{album.artist}}</h2>
+        {% else %}
+        
+            <h3> You dont have any albums </h3>
+        {% endif %}
+    </body>
+    </html>
+    {% endblock %}
+
+

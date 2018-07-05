@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% extends 'music\base.html'%}
+{% block body %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,12 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body style="background: powderblue">
+<body style="background: rgb(247, 111, 195)">
         <h1 align="center"><I><B><U>Welcome to Your Playlist</U></I></h1></B></h1>
-    {% if all_albums %}
+    {% if object_list %}
         <ul>
-            {% for album in all_albums %}
-               <li><I><B><h2> <a href ="/music/{{album.id}}">{{album.album_name}}</h2></B></I></a></li>
+            {% for album in object_list %}
+        
+               <li><I><B><h2> <a href ="/music/{{album.id}}">{{album.album_title}}</h2></B></I></a></li>
+               
             {% endfor %}
         </ul>
     {% else %}
@@ -19,5 +23,6 @@
     {% endif %}
 </body>
 </html>
+{% endblock %}
 
 
